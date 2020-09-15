@@ -3,18 +3,16 @@ import { color, fontFamily } from '../../styles/variables';
 
 
 export const FooterContainer = styled.footer`
-	padding: 0 30px;
 	height: 50px;
-	width: auto;
+	width: 100%;
 	background-color: ${color.primary};
 	color: ${color.white};
 	display: flex;
-	align-items: center;
 	justify-content: flex-start;
-	position: absolute:
-	bottom: 0;
+	align-items: center;
 
 	& h2 {
 		font-size: 16px;
+		margin-left: 30px;
 	}
 `;

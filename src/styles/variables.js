@@ -17,9 +17,9 @@ const variables = {
 	},
 	media: {
 		mobile: '480px',
-		tablet: '768px',
-		laptop: '1024px',
-		desktop: '1200px', 
+		tablet: '700px',
+		laptop: '950px',
+		desktop: '1260px',  
 	}
 };
 
@@ -29,3 +29,8 @@ module.exports = {
 	fontFamily: variables.fontFamily,
 	media: variables.media,
 }
+
+//		mobile: '480px',
+// 		tablet: '768px',
+// 		laptop: '1024px',
+// 		desktop: '1200px', 

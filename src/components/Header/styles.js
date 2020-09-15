@@ -20,7 +20,12 @@ export const H1 = styled.h1`
 	grid-column-start: 2;
 	grid-column-end: 4;
 	margin: auto 0;
-	color: ${color.white};
+
+
+	& a {
+		text-decoration: none;
+		color: ${color.white};
+	}
 
 	@media screen and (min-width: ${media.mobile}) {
 		font-size: 33px;
@@ -63,40 +68,9 @@ export const Nav = styled.nav`
 	& a {
 		text-decoration: none;
 		color: ${color.white};
+
+		:hover {
+			color: ${color.cream};
+		}
 	}
-`;
-
-export const MenuContainer = styled.ul`
-	background-color: ${color.secondary};
-	padding: 0;
-	position: absolute;
-	z-index: 1;
-	right: 30%;
-	top: 50%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	list-style: none;
-	box-shadow: 4px 5px 4px 1px ${color.black}77;
-
-
-	& li {
-		width: 100%;
-	}
-
-	& a {
-		float: center;
-		text-decoration: none;
-		color: ${color.white};
-		font-size: 24px;
-	}
-
-	& :hover {
-	  background-color: ${color.white};
-
-	  & a {
-	  color: ${color.black};
-	  }
-	}
-
 `;

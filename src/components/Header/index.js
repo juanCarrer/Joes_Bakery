@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import { HamburgerMenu } from '../HamburgerMenu';
 import { media, color } from '../../styles/variables'
 import { HeaderContainer, H1, ButtonContainer, Nav, MenuContainer} from './styles';
-
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
 	const mediaString = `(min-width: ${media.tablet})`;
@@ -26,9 +27,13 @@ export const Header = () => {
 		setMenu(true);
 	}
 
+	const closeMenu = () => {
+		setMenu(false);
+	}
+
 	return (
 		<HeaderContainer>
-			<H1>Joe’s Bakery</H1>
+			<H1><Link to="/">Joe’s Bakery</Link></H1>
 			{
 				!mediaButton ? (
 					<ButtonContainer>
@@ -36,18 +41,15 @@ export const Header = () => {
 							<MenuIcon style={{color: color.white}} />
 						</Button>
 						{
-							menu && <MenuContainer>
-								<li><a href="#recetas">Recetas</a></li>
-								<li><a href="#metodos">Metodos</a></li>
-							</MenuContainer>
+							menu && <HamburgerMenu onClick={handleMenu} clickHandler={closeMenu}/>
 						}
 					</ButtonContainer>	
 				) :
 				(
 					<Nav>
 						<ul>
-							<li><a href="#recetas">Recetas</a></li>
-							<li><a href="#metodos">Metodos</a></li>
+							<li><Link to="/recipes">Recetas</Link></li>
+							<li><Link to="/methods">Métodos</Link></li>
 						</ul>
 					</Nav>
 				)

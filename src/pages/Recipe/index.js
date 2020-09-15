@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Recipe = () => {
-	return <h1>pagina de recetas</h1>
+	return <h1>explicacion de receta</h1>
 }
