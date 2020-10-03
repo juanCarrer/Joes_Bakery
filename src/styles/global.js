@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { color } from './variables';
+import { color, fontFamily } from './variables';
 
 export const GlobalStyle = createGlobalStyle`
 	body {
@@ -7,5 +7,6 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 0;
     min-width: 320px;
 		background-color: ${color.white};
+		font-family: ${fontFamily.primary};
 	}
 `;

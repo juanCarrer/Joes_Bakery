@@ -10,9 +10,39 @@ const firebaseConfig = {
 	appId: "1:828716849122:web:1eb88cc2f6a3b8c604cbbb"
 };
 
-console.log(firebase.apps.length);
 firebase.initializeApp(firebaseConfig);
-console.log('esto se esta ejecutando en firebase');
-console.log(firebase.apps.length);
 
-//funciones https://github.com/midudev/curso-nextjs-twitter-clone/blob/04-firestore-for-creating-tweets/firebase/client.js
+const dataBase = firebase.firestore();
+
+// hace fetch de los thumbnails de las recetas
+export const fetchThumbnails = async (collection) => {
+	const data = [];
+	await dataBase.collection(collection).get()
+		.then((response) => {
+			response.forEach(doc => {
+				const docData = doc.data();
+				const name = docData.name;
+				const id = doc.id;
+				const image = docData.image;
+
+				data.push({
+					name,
+					id,
+					image,
+				})
+			})
+		});
+
+	return data;
+}
+
+export const fetchPost = async (collection, document) => {
+	let data;
+	await dataBase.collection(`${collection}/${document}/post`).get()
+		.then((response) => {
+			response.forEach(doc => {
+				data = doc.data();
+			})
+		})
+	return data;
+}

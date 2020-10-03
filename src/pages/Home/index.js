@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Recipes } from '../../components/Recipes';
-import { Methods } from '../../components/Methods';
+import { CardGrid } from '../../components/CardGrid';
 import { H1, Section } from './styles';
 
 
@@ -10,11 +9,11 @@ export const Home = () => {
 		<main>
 			<Section>
 				<H1><Link to='recipes'>Recetas</Link></H1>
-				<Recipes />
+				<CardGrid content='recipes' />
 			</Section>
 			<Section>
 				<H1><Link to='methods'>Métodos</Link></H1>
-				<Methods />
+				<CardGrid content='methods' />
 			</Section>
 		</main>
 	)

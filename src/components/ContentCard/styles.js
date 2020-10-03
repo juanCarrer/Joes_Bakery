@@ -19,6 +19,7 @@ export const CardContainer = styled.div`
 	margin-bottom: 10px;
 	height: 240px;
 	box-shadow: 0px 0px 14px -7px ${color.black};
+	border-radius: 10px;
 
 	& a {
 		text-decoration: none;
@@ -27,7 +28,7 @@ export const CardContainer = styled.div`
 	:hover {
 
 		& img {
-			animation-duration: 2s;
+			animation-duration: 1s;
 			animation-name: ${imgZoom};
 			transform: scale(1.1);
 		}
@@ -40,6 +41,8 @@ export const PhotoContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 `;
 
 export const Photo = styled.img`
