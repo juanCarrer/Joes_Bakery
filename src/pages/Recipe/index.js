@@ -1,9 +1,10 @@
-import React, { useEffect, useState, Fragment} from 'react';
-import { fetchPost } from '../../../firebase/client';
-import { RecipeTitle } from '../../components/RecipeTitle';
+import React, { Fragment } from 'react';
+import { PostTitle } from '../../components/PostTitle';
 import { PrecentageTable } from '../../components/PercentageTable';
 import { CardGrid } from '../../components/CardGrid';
 import { ProcessList } from '../../components/ProcessList';  
+import { useUrlParams } from '../../hooks/useUrlParams';
+import { useFetchPostData } from '../../hooks/useFetchPostData'; 
 import { Main, InfoSection, RecommendationsSection, IngredientsSection } from './styles';
 
 const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -16,30 +17,8 @@ const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 
 
 export const Recipe = ({ match, history }) => {
-	const [ recipeId, setRecipeId ] = useState( match.params.recipeId );
-	const [recipeData, setRecipeData] = useState({});
-
-	const handelNavBottoms = (e) => {
-		if (history.location.pathname.includes('/recipes/')) {
-			const newId = history.location.pathname.slice(9)
-			setRecipeId(newId)
-		}
-	}
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-		fetchPost('recipes', recipeId).then(response => {
-		setRecipeData(response);
-	})
-	}, [recipeId]);
-
-	useEffect(() => {
-			window.addEventListener('popstate', (e) => handelNavBottoms(e))
-
-		return () => {
-			window.removeEventListener('popstate', (e) => handelNavBottoms(e));
-		}
-	}, [])
+	const [ recipeId, setRecipeId ] = useUrlParams(match, history);
+	const [recipeData, setRecipeData] = useFetchPostData('recipes', recipeId);
 
 	const handleRecomendationClick = (newId) => {
 		setRecipeId( newId );
@@ -47,7 +26,7 @@ export const Recipe = ({ match, history }) => {
 
 	return (
 		<Fragment>
-			<RecipeTitle title={recipeData.name} imageSrc={recipeData.image}/>
+			<PostTitle title={recipeData.name} imageSrc={recipeData.image}/>
 			<Main>
 				<InfoSection>
 					<p>
@@ -84,7 +63,7 @@ export const Recipe = ({ match, history }) => {
 				</section>
 			</Main>
 			<RecommendationsSection>
-				<h1>Otras recetas y metodos</h1>
+				<h1>Otras recetas</h1>
 				<CardGrid
 					content='recipes'
 					handelClick={handleRecomendationClick}

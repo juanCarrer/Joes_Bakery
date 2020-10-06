@@ -8,10 +8,17 @@ export const CardGrid = ({ content, handelClick, exclude, limit }) => {
 	const [ContentData, setContentData] = useState([]);
 
 	useEffect(() => {
+		let isMounted = true;
 		fetchThumbnails(content).then(response => {
-			const data = dataTreatment(response)
-			setContentData(data);
+			const data = dataTreatment(response);
+			if (isMounted) {
+				setContentData(data);
+			}
 		})
+
+		return () => {
+			isMounted = false;
+		}
 	}, [exclude, limit]);
 
 	const dataTreatment = (data) => {

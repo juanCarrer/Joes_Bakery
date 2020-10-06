@@ -9,11 +9,11 @@ export const Home = () => {
 		<main>
 			<Section>
 				<H1><Link to='recipes'>Recetas</Link></H1>
-				<CardGrid content='recipes' />
+				<CardGrid content='recipes' limit={8}/>
 			</Section>
 			<Section>
 				<H1><Link to='methods'>Métodos</Link></H1>
-				<CardGrid content='methods' />
+				<CardGrid content='methods' limit={8}/>
 			</Section>
 		</main>
 	)

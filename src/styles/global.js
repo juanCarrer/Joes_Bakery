@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { color, fontFamily } from './variables';
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,3 +10,9 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: ${fontFamily.primary};
 	}
 `;
+
+export const MainContentContainer = styled.div`
+	min-height: calc(100vh - 70px);
+`;
+
+

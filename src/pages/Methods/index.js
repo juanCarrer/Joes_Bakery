@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Title } from './styles';
+import { CardGrid } from '../../components/CardGrid';
 
 export const Methods = () => {
 	return (
-		<h1>esta es la pagina para las metodos</h1>
+		<Fragment>
+			<Title>Todos los Métodos</Title>
+			<CardGrid content='methods' />
+		</Fragment>
 	)
 }

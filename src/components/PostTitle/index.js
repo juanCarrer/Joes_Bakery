@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import { Image, Title, Section } from './styles';
 
-export const RecipeTitle = ({ title, imageSrc }) => {
-	return (
+export const PostTitle = ({ title, imageSrc }) => {
+	return ( 
 		<Section>
 			{
 				title ? (

@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Title } from './styles';
+import { CardGrid } from '../../components/CardGrid';
 
 export const Recipes = () => {
 	return (
-		<h1>esta es la pagina para las recetas</h1>
+		<Fragment>
+			<Title>Todas las Recetas</Title>
+			<CardGrid content='recipes' />
+		</Fragment>
 	)
 }
