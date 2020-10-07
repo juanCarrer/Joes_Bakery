@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { LoadPostTitle } from '../LoadPostTitle';
 import { Image, Title, Section } from './styles';
 
 export const PostTitle = ({ title, imageSrc }) => {
@@ -11,7 +12,7 @@ export const PostTitle = ({ title, imageSrc }) => {
 					<Title>{title}</Title>
 				</Fragment>
 				)
-				: <h1>cargando</h1>
+				: <LoadPostTitle />
 			}
 		</Section>
 	)

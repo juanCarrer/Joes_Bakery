@@ -1,12 +1,11 @@
 import React from 'react';
-import { CardContainer, PhotoPlaceHolder } from './styles';
+import { CardContainer, PhotoPlaceHolder, AnimationGradient} from './styles'; 
 
 export const LoadContentCard = () => {
 	return (
 		<CardContainer>
+			<AnimationGradient />
 			<PhotoPlaceHolder/> 
 		</CardContainer>
 	)
 }
-
-//cambiar para que el container sea toda la parte de atras y por delante este como si fuera la foto

@@ -6,7 +6,8 @@ const variables = {
 		teal: '#45A189',
 		green: '#10C764',
 		black: '#111111',
-		white: '#F8F8F8'
+		white: '#F8F8F8',
+		gray: '#dcdcdc',
 	},
 	fontSize: {
 		title: '56px',
@@ -20,7 +21,7 @@ const variables = {
 		tablet: '700px',
 		laptop: '950px',
 		desktop: '1260px',  
-	}
+	},
 };
 
 module.exports = {

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { ContentCard } from '../ContentCard';
 import { fetchThumbnails } from '../../../firebase/client';
+import { LoadContentCard } from '../../components/LoadContentCard';
 import { Container } from './styles';
 
 
@@ -50,7 +51,13 @@ export const CardGrid = ({ content, handelClick, exclude, limit }) => {
 							/>
 						}
 					)	
-				) : <h1>cargando...</h1>
+				) :
+				(
+					<Fragment>
+						<LoadContentCard />
+						<LoadContentCard />
+					</Fragment>
+				)
 			}
 		</Container>
 	);

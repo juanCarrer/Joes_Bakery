@@ -2,13 +2,13 @@ import styled, { keyframes } from 'styled-components';
 import { color, fontFamily } from '../../styles/variables';
 
 const imgZoom = keyframes`
-		from {
-			transform: none;
-		}
+	from {
+		transform: none;
+	}
 
-		to {
-			transform: scale(1.1);
-		}
+	to {
+		transform: scale(1.1);
+	}
 
 `;
 

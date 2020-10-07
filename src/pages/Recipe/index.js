@@ -22,6 +22,7 @@ export const Recipe = ({ match, history }) => {
 
 	const handleRecomendationClick = (newId) => {
 		setRecipeId( newId );
+		setRecipeData({});
 	} 
 
 	return (

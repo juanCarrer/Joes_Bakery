@@ -11,6 +11,7 @@ export const Section = styled.section`
 
 	@media screen and (min-width: ${media.mobile}) {
 		max-height: 800px;
+		min-height: 400px;
 	}
 
 `;

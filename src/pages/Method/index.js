@@ -19,6 +19,7 @@ export const Method = ({ match, history }) => {
 
 	const handleRecomendationClick = (newId) => {
 		setMethodId( newId );
+		setMethodData({});
 	} 
 
 	return (
