@@ -55,7 +55,7 @@ export const Nav = styled.nav`
 		list-style-type: none;
 		padding: 0 10px 0 0;
 		font-size: 20px;
-		font-family: ${fontFamily.secondary};
+		font-family: ${fontFamily.primary};
 		max-width: 200px;
 
 		@media screen and (min-width: ${media.laptop}) {

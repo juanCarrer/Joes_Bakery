@@ -14,7 +14,6 @@ const variables = {
 	},
 	fontFamily: {
 		primary: 'Roboto, sans-serif',
-		secondary: 'Open Sans, sans-serif',
 	},
 	media: {
 		mobile: '480px',

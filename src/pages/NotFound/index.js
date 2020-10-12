@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 
 export const NotFound = () => {
-	return <h1>esta pagina no existe</h1>
+	return (
+		<Fragment>
+			<Helmet>
+				<title>404| Joe’s Bakery</title>
+			</Helmet>
+			<h1>esta pagina no existe</h1>
+		</Fragment>
+	)
 }

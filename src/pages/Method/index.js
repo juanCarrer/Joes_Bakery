@@ -5,6 +5,7 @@ import { CardGrid } from '../../components/CardGrid';
 import { useUrlParams } from '../../hooks/useUrlParams';
 import { useFetchPostData } from '../../hooks/useFetchPostData'; 
 import { RecommendationsSection, Main, TableContainer } from './styles';
+import { Helmet } from 'react-helmet';
 
 const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -24,6 +25,10 @@ export const Method = ({ match, history }) => {
 
 	return (
 		<Fragment>
+			<Helmet>
+				<title>{`${methodData.name ? methodData.name : 'Método'} | Joe’s Bakery`}</title>
+				<meta name="description" content="explicación de técnicas de panadería" />
+			</Helmet>
 			<PostTitle title={methodData.name} imageSrc={methodData.image}/>
 			<Main>
 				<p>{infoDefault.repeat(5)}</p>

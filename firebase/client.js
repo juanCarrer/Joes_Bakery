@@ -1,4 +1,5 @@
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const firebaseConfig = {
 	apiKey: "AIzaSyC6oc_lb90nzhBLmoXOuitc0rZRM-z1qgk",
@@ -36,6 +37,7 @@ export const fetchThumbnails = async (collection) => {
 	return data;
 }
 
+// hace fetch de la informacion del post
 export const fetchPost = async (collection, document) => {
 	let data;
 	await dataBase.collection(`${collection}/${document}/post`).get()

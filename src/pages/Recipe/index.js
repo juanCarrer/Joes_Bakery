@@ -6,6 +6,7 @@ import { ProcessList } from '../../components/ProcessList';
 import { useUrlParams } from '../../hooks/useUrlParams';
 import { useFetchPostData } from '../../hooks/useFetchPostData'; 
 import { Main, InfoSection, RecommendationsSection, IngredientsSection } from './styles';
+import { Helmet } from 'react-helmet';
 
 const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -27,6 +28,10 @@ export const Recipe = ({ match, history }) => {
 
 	return (
 		<Fragment>
+			<Helmet>
+				<title>{`${recipeData.name ? recipeData.name : 'Receta'} | Joe’s Bakery`}</title>
+				<meta name="description" content="explicación de recetas de panadería" />
+			</Helmet>
 			<PostTitle title={recipeData.name} imageSrc={recipeData.image}/>
 			<Main>
 				<InfoSection>
