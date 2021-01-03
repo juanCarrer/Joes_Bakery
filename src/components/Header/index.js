@@ -33,7 +33,7 @@ export const Header = () => {
 
 	return (
 		<HeaderContainer>
-			<H1><Link to="/">Joe’s Bakery</Link></H1>
+			<H1 onClick={closeMenu}><Link to="/">Joe’s Bakery</Link></H1>
 			{
 				!mediaButton ? (
 					<ButtonContainer>
