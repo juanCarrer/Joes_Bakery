@@ -16,8 +16,7 @@ const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 						mollit anim id est laborum`
 
 
-
-export const Recipe = ({ match, history }) => {
+const Recipe = ({ match, history }) => {
 	const [ recipeId, setRecipeId ] = useUrlParams(match, history);
 	const [recipeData, setRecipeData] = useFetchPostData('recipes', recipeId);
 
@@ -80,3 +79,5 @@ export const Recipe = ({ match, history }) => {
 		</Fragment>
 	)
 }
+
+export default Recipe;

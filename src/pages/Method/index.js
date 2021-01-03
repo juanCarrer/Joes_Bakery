@@ -14,7 +14,7 @@ const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
 						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 						mollit anim id est laborum`
 
-export const Method = ({ match, history }) => {
+const Method = ({ match, history }) => {
 	const [methodId, setMethodId] = useUrlParams(match, history);
 	const [methodData, setMethodData] = useFetchPostData('methods', methodId);
 
@@ -60,3 +60,5 @@ export const Method = ({ match, history }) => {
 		</Fragment>
 	)
 }
+
+export default Method;

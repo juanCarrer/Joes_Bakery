@@ -5,7 +5,7 @@ import { H1, Section } from './styles';
 import { Helmet } from 'react-helmet';
 
 
-export const Home = () => {
+const Home = () => {
 	return (
 		<Fragment>
 			<Helmet>
@@ -26,3 +26,5 @@ export const Home = () => {
 		</Fragment>
 	)
 }
+
+export default Home;

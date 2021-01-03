@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
-export const NotFound = () => {
+const NotFound = () => {
 	return (
 		<Fragment>
 			<Helmet>
@@ -11,3 +11,5 @@ export const NotFound = () => {
 		</Fragment>
 	)
 }
+
+export default NotFound;

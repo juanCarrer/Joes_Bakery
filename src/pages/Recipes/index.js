@@ -3,7 +3,7 @@ import { Title } from './styles';
 import { CardGrid } from '../../components/CardGrid';
 import { Helmet } from 'react-helmet';
 
-export const Recipes = () => {
+const Recipes = () => {
 	return (
 		<Fragment>
 			<Helmet>
@@ -15,3 +15,5 @@ export const Recipes = () => {
 		</Fragment>
 	)
 }
+
+export default Recipes;
