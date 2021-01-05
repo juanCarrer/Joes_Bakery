@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Button from '@material-ui/core/Button';
-import MenuIcon from '@material-ui/icons/Menu';
 import { HamburgerMenu } from '../HamburgerMenu';
 import { media, color } from '../../styles/variables'
 import { HeaderContainer, H1, ButtonContainer, Nav, MenuContainer} from './styles';
 import { Link } from 'react-router-dom';
+import HamburgerIcon from '../../../public/hamburgerIcon.png';
 
 export const Header = () => {
 	const mediaString = `(min-width: ${media.tablet})`;
@@ -37,9 +36,11 @@ export const Header = () => {
 			{
 				!mediaButton ? (
 					<ButtonContainer>
-						<Button onClick={handleMenu}>
-							<MenuIcon style={{color: color.white}} />
-						</Button>
+						<img
+							src={HamburgerIcon}
+							alt='menu de hamburguesa'
+							onClick={handleMenu}
+						/>
 						{
 							menu && <HamburgerMenu onClick={handleMenu} clickHandler={closeMenu}/>
 						}

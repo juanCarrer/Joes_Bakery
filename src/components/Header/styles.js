@@ -37,9 +37,26 @@ export const ButtonContainer = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	height: 100%;
-	padding: 5px 10px 0 10px;
+	padding: 5px 30px 0 10px;
 	grid-column-start: 4;
 	position: relative;
+
+	img {
+		background-color: ${color.black}33;
+		border-radius: 5px;
+		height: 26px;
+		width: 26px;
+
+		@media screen and (min-width: ${media.mobile}) {
+			height: 30px;
+			width: 30px;
+		}
+
+		&:active {
+			background-color: ${color.black};
+		}
+	}
+
 
 `;
 
