@@ -7,13 +7,6 @@ import { useFetchPostData } from '../../hooks/useFetchPostData';
 import { RecommendationsSection, Main, TableContainer } from './styles';
 import { Helmet } from 'react-helmet';
 
-const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
-						dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-						mollit anim id est laborum`
-
 const Method = ({ match, history }) => {
 	const [methodId, setMethodId] = useUrlParams(match, history);
 	const [methodData, setMethodData] = useFetchPostData('methods', methodId);
@@ -31,7 +24,11 @@ const Method = ({ match, history }) => {
 			</Helmet>
 			<PostTitle title={methodData.name} imageSrc={methodData.image}/>
 			<Main>
-				<p>{infoDefault.repeat(5)}</p>
+				<p>
+					{
+						methodData.description ? methodData.description : 'Cargando...'
+					}
+				</p>
 				{
 					methodData.tables &&
 						<TableContainer>

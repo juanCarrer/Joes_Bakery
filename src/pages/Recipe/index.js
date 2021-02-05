@@ -8,14 +8,6 @@ import { useFetchPostData } from '../../hooks/useFetchPostData';
 import { Main, InfoSection, RecommendationsSection, IngredientsSection } from './styles';
 import { Helmet } from 'react-helmet';
 
-const infoDefault = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irur
-						dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-						Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-						mollit anim id est laborum`
-
-
 const Recipe = ({ match, history }) => {
 	const [ recipeId, setRecipeId ] = useUrlParams(match, history);
 	const [recipeData, setRecipeData] = useFetchPostData('recipes', recipeId);
@@ -36,7 +28,7 @@ const Recipe = ({ match, history }) => {
 				<InfoSection>
 					<p>
 						{
-							recipeData.description ? recipeData.description : infoDefault
+							recipeData.description ? recipeData.description : 'Cargando...'
 						}
 					</p>
 				</InfoSection>
@@ -63,7 +55,7 @@ const Recipe = ({ match, history }) => {
 									process={recipeData.process}
 									id={recipeId}
 								/>
-							) : <p>{infoDefault}</p>
+							) : <p>Cargando...</p>
 						}
 				</section>
 			</Main>
