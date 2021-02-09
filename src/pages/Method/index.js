@@ -3,8 +3,10 @@ import { PostTitle } from '../../components/PostTitle';
 import { PrecentageTable } from '../../components/PercentageTable';
 import { CardGrid } from '../../components/CardGrid';
 import { useUrlParams } from '../../hooks/useUrlParams';
+import { formatPostDescription } from '../../utils/formatPostDescription';
 import { useFetchPostData } from '../../hooks/useFetchPostData'; 
 import { RecommendationsSection, Main, TableContainer } from './styles';
+import { Text } from '../../utils/postDescriptionStyle';
 import { Helmet } from 'react-helmet';
 
 const Method = ({ match, history }) => {
@@ -24,11 +26,11 @@ const Method = ({ match, history }) => {
 			</Helmet>
 			<PostTitle title={methodData.name} imageSrc={methodData.image}/>
 			<Main>
-				<p>
-					{
-						methodData.description ? methodData.description : 'Cargando...'
-					}
-				</p>
+				{
+					methodData.description ?
+					<Text dangerouslySetInnerHTML={formatPostDescription(methodData.description)}/> : 
+					<Text>Cargando...</Text>
+				}
 				{
 					methodData.tables &&
 						<TableContainer>

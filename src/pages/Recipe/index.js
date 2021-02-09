@@ -4,8 +4,10 @@ import { PrecentageTable } from '../../components/PercentageTable';
 import { CardGrid } from '../../components/CardGrid';
 import { ProcessList } from '../../components/ProcessList';  
 import { useUrlParams } from '../../hooks/useUrlParams';
+import { formatPostDescription } from '../../utils/formatPostDescription';
 import { useFetchPostData } from '../../hooks/useFetchPostData'; 
 import { Main, InfoSection, RecommendationsSection, IngredientsSection } from './styles';
+import { Text } from '../../utils/postDescriptionStyle';
 import { Helmet } from 'react-helmet';
 
 const Recipe = ({ match, history }) => {
@@ -26,11 +28,11 @@ const Recipe = ({ match, history }) => {
 			<PostTitle title={recipeData.name} imageSrc={recipeData.image}/>
 			<Main>
 				<InfoSection>
-					<p>
-						{
-							recipeData.description ? recipeData.description : 'Cargando...'
-						}
-					</p>
+				{
+					recipeData.description ?
+					<Text dangerouslySetInnerHTML={formatPostDescription(recipeData.description)}/> : 
+					<Text>Cargando...</Text>
+				}
 				</InfoSection>
 				{ recipeData.tables && 
 					<IngredientsSection>

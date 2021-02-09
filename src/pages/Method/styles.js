@@ -6,7 +6,7 @@ export const Main = styled.main`
 	
 	& h1 {
 		text-align: center;
-	} 
+	}
 `;
 
 export const RecommendationsSection = styled.section`
